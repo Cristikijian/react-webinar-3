@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import { getNoun } from './utils';
 
 /**
  * Приложение
@@ -28,7 +29,7 @@ function App({store}) {
                 <div className='Item-code'>{item.code}</div>
                 <div className='Item-title'>
                   {item.title}
-                  {item.counter >= 1 && ` | Выделяли ${item.counter} раз`}
+                  {item.counter >= 1 && ` | Выделяли ${item.counter} ${getNoun(item.counter, 'раз', 'раза', 'раз')}`}
                 </div>
                 <div className='Item-actions'>
                   <button onClick={() => store.deleteItem(item.code)}>
