@@ -4,11 +4,6 @@
   transition: background-color 1s;
 }
 
-.Item_selected {
-  background: #75aaf1;
-  color: #fff;
-}
-
 .Item-code {
   padding: 20px 10px 20px 20px;
 }
@@ -18,8 +13,17 @@
   padding: 20px 10px;
 }
 
-.Item-actions {
+.Item-price {
+  width: 150px;
+  text-align: right;
+  padding: 20px 10px;
+}
+
+.Item-button {
   display: flex;
   justify-content: flex-end;
   padding: 20px 20px 20px 10px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
 }
