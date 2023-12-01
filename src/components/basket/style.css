@@ -1,24 +1,30 @@
+.Basket-overlay {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.Basket-overlay_visible {
+  visibility: visible;
+}
+
 .Basket-modal {
+
   position: absolute;
   top: 25%;
-  left: 3%;
+  left: 25%;
   width: 960px;
   min-height: 300px;
   background-color: #FFFFFF;
   border: 1px solid #ccc;
-  visibility: hidden;
-}
-
-.Basket-wrapper {
-  z-index: 10;
 }
 
 .Basket-empty {
   padding: 30px;
-}
-
-.Modal-close {
-  visibility: visible;
 }
 
 .Basket-head {

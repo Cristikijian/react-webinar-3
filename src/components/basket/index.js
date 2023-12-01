@@ -1,39 +1,39 @@
+import { cn as bem } from '@bem-react/classname';
 import React from "react";
 import './style.css';
 
 function Basket ({basket, showModal, closeModal, deleteItem }) {
+  const cn = bem('Basket');
 
   const basketSum = basket.reduce((acc, item) => {
     return (item.price * item.count) + acc;
   }, 0);
 
-  const basketClassname = showModal ? 'Basket-modal Modal-close' : 'Basket-modal';
-
   return (
-    <div className={basketClassname}>
-      <div className='Basket'>
-        <div className='Basket-head'>
-            <h1 className='Basket-title'>Корзина</h1>
-            <button type='button' className='Basket-button' onClick={closeModal}>Закрыть</button>
+    <div className={cn('overlay', {visible: showModal})}>
+      <div className={cn('modal')}>
+        <div className={cn('head')}>
+            <h1 className={cn('title')}>Корзина</h1>
+            <button type='button' className={cn('button')} onClick={closeModal}>Закрыть</button>
         </div>
-        {basket.length === 0 && <div className="Basket-empty">Корзина пуста</div>}
-        {basket.length > 0 && <div className="Busket-list">
+        {basket.length === 0 && <div className={cn('empty')}>Корзина пуста</div>}
+        {basket.length > 0 && <div>
             { basket.map(item =>
-              <div key={item.code} className='Basket-item'>
-                <div className='Basket-item-code'>{item.code}</div>
-                  <div className='Basket-item-title'>
+              <div key={item.code} className={cn('item')}>
+                <div className={cn('item-code')}>{item.code}</div>
+                  <div className={cn('item-title')}>
                     {item.title}
                   </div>
-                  <div className='Basket-item-price'>{`${item.price} ₽`}</div>
-                  <div className='Basket-item-count'>{`${item.count} шт`}</div>
-                  <div className="Basket-item-button">
+                  <div className={cn('item-price')}>{`${item.price} ₽`}</div>
+                  <div className={cn('item-count')}>{`${item.count} шт`}</div>
+                  <div className={cn('item-button')}>
                     <button onClick={() => deleteItem(item.code)}>
                       Удалить
                     </button>
                   </div>
               </div>
             )}
-            <div className="Basket-footer">
+            <div className={cn('footer')}>
               <div><b>Итого</b></div>
               <div><b>{basketSum} ₽</b></div>
             </div>
