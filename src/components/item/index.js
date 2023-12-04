@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { useMoneyFormatter } from "../../hooks/useMoneyFormatter";
 import './style.css';
 
 function Item(props) {
+
+  const formatter = useMoneyFormatter();
+
   const onAdd = () => {
     props.onAdd(props.item.code);
   };
@@ -13,7 +17,7 @@ function Item(props) {
       <div className='Item-title'>
         {props.item.title}
       </div>
-      <div className='Item-price'>{`${props.item.price} ₽`}</div>
+      <div className='Item-price'>{`${formatter.format(props.item.price)}`}</div>
       <div className='Item-button'>
         <button onClick={onAdd}>
           Добавить

@@ -1,8 +1,12 @@
 import { cn as bem } from '@bem-react/classname';
 import React from "react";
+import { useMoneyFormatter } from '../../hooks/useMoneyFormatter';
 import './style.css';
 
 function Basket ({basket, showModal, closeModal, deleteItem }) {
+
+  const formatter = useMoneyFormatter();
+
   const cn = bem('Basket');
 
   const basketSum = basket.reduce((acc, item) => {
@@ -24,7 +28,7 @@ function Basket ({basket, showModal, closeModal, deleteItem }) {
                   <div className={cn('item-title')}>
                     {item.title}
                   </div>
-                  <div className={cn('item-price')}>{`${item.price} ₽`}</div>
+                  <div className={cn('item-price')}>{`${formatter.format(item.price)}`}</div>
                   <div className={cn('item-count')}>{`${item.count} шт`}</div>
                   <div className={cn('item-button')}>
                     <button onClick={() => deleteItem(item.code)}>
