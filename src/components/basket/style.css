@@ -33,6 +33,7 @@
   flex-direction: row;
   background-color: #F5F5F5;
   padding: 25px 30px 25px 25px;
+  margin-bottom: 50px;
 }
 
 .Basket-title {
@@ -91,6 +92,7 @@
   justify-content: flex-end;
   align-items: center;
   padding: 20px 100px;
+  margin-top: 70px;
 }
 
 .Basket-footer div:first-child {
