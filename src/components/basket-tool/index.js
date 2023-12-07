@@ -1,13 +1,20 @@
-import {memo} from "react";
+import { cn as bem } from '@bem-react/classname';
 import PropTypes from 'prop-types';
-import {cn as bem} from '@bem-react/classname';
-import {numberFormat, plural} from "../../utils";
+import { memo, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { numberFormat, plural } from "../../utils";
 import './style.css';
 
 function BasketTool({sum, amount, onOpen}) {
+  const navigate = useNavigate();
   const cn = bem('BasketTool');
+  const callbacks =  {
+    goToMain: useCallback(() => navigate('/')),
+  }
   return (
     <div className={cn()}>
+      <div className={cn('go-to-main')}><a className="link" onClick={callbacks.goToMain}>Главная</a></div>
+      <div>
       <span className={cn('label')}>В корзине:</span>
       <span className={cn('total')}>
         {amount
@@ -20,6 +27,7 @@ function BasketTool({sum, amount, onOpen}) {
         }
       </span>
       <button onClick={onOpen}>Перейти</button>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.ItemInfo-card {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  padding: 40px;
+}
+
+.ItemInfo-country,
+.ItemInfo-category,
+.ItemInfo-edition,
+.ItemInfo-price,
+.ItemInfo-button-container {
+  margin-top: 20px;
+}
+
+.ItemInfo-price {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}

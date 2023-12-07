@@ -1,0 +1,19 @@
+.Pages {
+  text-align: right;
+  padding-right: 21px;
+}
+
+.Pages-link {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-top: 15px;
+}
+
+.Pages-link_active {
+  background-color: #0087E9;
+}
+
+.Pages-link:hover {
+  background-color: #E1E1E1;
+  cursor: pointer;
+}
