@@ -30,7 +30,7 @@ function Main() {
     // Открытие модалки корзины
     openModalBasket: useCallback(() => store.actions.modals.open('basket'), [store]),
     //открытие карточки товара
-    openItemCard: useCallback((id) => navigate(`items/${id}`)),
+    openItemCard: useCallback((id) => navigate(`/items/${id}`)),
   }
 
   const renders = {
@@ -42,12 +42,10 @@ function Main() {
   return (
     <PageLayout>
       <Head title='Магазин'/>
-      <BasketTool onOpen={callbacks.openModalBasket} amount={select.amount}
-                  sum={select.sum}/>
+      <BasketTool onOpen={callbacks.openModalBasket} amount={select.amount} sum={select.sum}/>
       <List list={select.list} renderItem={renders.item}/>
       { select.list.length > 0 && <Pages/> }
     </PageLayout>
-
   );
 }
 

@@ -1,14 +1,16 @@
-import {memo, useCallback} from 'react';
+import { memo, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BasketTotal from "../../components/basket-total";
 import ItemBasket from "../../components/item-basket";
 import List from "../../components/list";
 import ModalLayout from "../../components/modal-layout";
-import BasketTotal from "../../components/basket-total";
-import useStore from "../../store/use-store";
 import useSelector from "../../store/use-selector";
+import useStore from "../../store/use-store";
 
 function Basket() {
 
   const store = useStore();
+  const navigate = useNavigate();
 
   const select = useSelector(state => ({
     list: state.basket.list,
@@ -21,11 +23,16 @@ function Basket() {
     removeFromBasket: useCallback(_id => store.actions.basket.removeFromBasket(_id), [store]),
     // Закрытие любой модалки
     closeModal: useCallback(() => store.actions.modals.close(), [store]),
+    //Открытие карточки товара
+    openItemCard: useCallback((id) => {
+      store.actions.modals.close();
+      navigate(`/items/${id}`);
+    }, [navigate]),
   }
 
   const renders = {
     itemBasket: useCallback((item) => {
-      return <ItemBasket item={item} onRemove={callbacks.removeFromBasket}/>
+      return <ItemBasket item={item} onRemove={callbacks.removeFromBasket} onOpen={callbacks.openItemCard}/>
     }, [callbacks.removeFromBasket]),
   };
 

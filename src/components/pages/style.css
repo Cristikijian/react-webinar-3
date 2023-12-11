@@ -11,6 +11,7 @@
 
 .Pages-link_active {
   background-color: #0087E9;
+  color: white;
 }
 
 .Pages-link:hover {

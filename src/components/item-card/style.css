@@ -1,4 +1,4 @@
-.ItemInfo-card {
+.ItemCard {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -7,15 +7,15 @@
   padding: 40px;
 }
 
-.ItemInfo-country,
-.ItemInfo-category,
-.ItemInfo-edition,
-.ItemInfo-price,
-.ItemInfo-button-container {
+.ItemCard-country,
+.ItemCard-category,
+.ItemCard-edition,
+.ItemCard-price,
+.ItemCard-button-container {
   margin-top: 20px;
 }
 
-.ItemInfo-price {
+.ItemCard-price {
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
