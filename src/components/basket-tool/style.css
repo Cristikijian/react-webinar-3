@@ -6,14 +6,6 @@
   font-size: 18px;
 }
 
-.BasketTool-go-to-main {
-  color: #0087E9;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.BasketTool-label {}
-
 .BasketTool-total {
   font-weight: bold;
   margin: 0 20px;
