@@ -15,7 +15,7 @@ function ItemInfo () {
 
   useEffect(() => {
       store.actions.catalogItem.load(params.id);
-  }, [])
+  }, [params.id])
 
   const cn = bem('ItemInfo');
 
