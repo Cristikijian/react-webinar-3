@@ -1,0 +1,33 @@
+.UserCard {
+  padding: 20px 40px;
+}
+
+.UserCard-title {
+  font-family: Arial;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 37px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.UserCard-prop {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 18px
+}
+
+.UserCard-prop_size_big {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.UserCard-label {
+  padding-right: 10px;
+}
+
+.UserCard-value {
+  font-weight: bold;
+}

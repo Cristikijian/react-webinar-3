@@ -1,0 +1,41 @@
+.LoginForm {
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.LoginForm-title {
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.LoginForm-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.LoginForm-input {
+  margin-bottom: 20px;
+  width: 195px;
+  height: 20px;
+}
+
+.LoginForm-button {
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+
+.LoginForm-error {
+  color: red;
+  margin-bottom: 19px;
+}

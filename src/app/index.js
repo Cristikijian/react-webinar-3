@@ -1,9 +1,10 @@
-import {useCallback, useContext, useEffect, useState} from 'react';
-import {Routes, Route} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import useSelector from "../hooks/use-selector";
-import Main from "./main";
-import Basket from "./basket";
 import Article from "./article";
+import Basket from "./basket";
+import Login from './login';
+import Main from "./main";
+import User from './user';
 
 /**
  * Приложение
@@ -18,6 +19,8 @@ function App() {
       <Routes>
         <Route path={''} element={<Main/>}/>
         <Route path={'/articles/:id'} element={<Article/>}/>
+        <Route path={'/profile'} element={<User/>}/>
+        <Route path={'/login'} element={<Login/>}/>
       </Routes>
 
       {activeModal === 'basket' && <Basket/>}
