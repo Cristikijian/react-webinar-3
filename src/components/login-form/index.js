@@ -9,9 +9,9 @@ function LoginForm({t, onLogin, isAutorize, error}) {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
   const cn = bem('LoginForm');
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    onLogin(login, password);
+    await onLogin(login, password);
     navigate('/profile');
   }
   return (

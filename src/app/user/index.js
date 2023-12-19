@@ -22,8 +22,6 @@ function User() {
     article: state.article.data,
   }));
 
-  console.log(select.userInfo, 'userInfo in user');
-
   const {t} = useTranslate();
 
   const callbacks = {

@@ -5,7 +5,6 @@ import './style.css';
 
 function UserCard({userInfo, t}) {
   const cn = bem('UserCard');
-  console.log(userInfo, 'userCard');
   return (<div className={cn()}>
    <div className={cn('title')}>{t('user.profile')}</div>
    {userInfo && 
