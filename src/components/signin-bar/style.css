@@ -1,0 +1,16 @@
+.SignInBar {
+  height: 41px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.SignInBar a {
+  color: #0087E9;
+  text-decoration: underline;
+}
+
+.SignInBar-logout-button,
+.SignInBar-login-button {
+  margin: 10px 20px 10px;
+}

@@ -22,5 +22,6 @@
   "user.login": "Login",
   "user.password": "Password",
   "user.entering": "Login",
-  "user.enter": "Enter"
+  "user.enter": "Enter",
+  "user.logout": "Logout"
 }

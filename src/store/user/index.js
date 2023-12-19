@@ -23,6 +23,8 @@ class UserState extends StoreModule {
         body: JSON.stringify({login, password})
       });
 
+      console.log(userInfo, 'userInfo in loginUser');
+
       const data = await response.json();
       if(data.error) {
         this.setState({
@@ -31,7 +33,7 @@ class UserState extends StoreModule {
         });
         return;
       }
-      console.log(data.result.user);
+      console.log(data.result.user, "data.result.user");
       window.localStorage.setItem('token', data.result.token);
       this.setState({
         ...this.getState(),
@@ -92,6 +94,8 @@ class UserState extends StoreModule {
         ...this.getState(),
         userInfo: json.result,
       }, 'Загружена информация о пользователе');
+
+      console.log(userInfo, json.result, 'json.result');
 
     } catch (e) {
       // Ошибка при загрузке

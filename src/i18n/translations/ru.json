@@ -24,5 +24,6 @@
   "user.login": "Логин",
   "user.password": "Пароль",
   "user.entering": "Вход",
-  "user.enter": "Войти"
+  "user.enter": "Войти",
+  "user.logout": "Выход"
 }

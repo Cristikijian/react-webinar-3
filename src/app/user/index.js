@@ -1,6 +1,7 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import Head from "../../components/head";
 import PageLayout from "../../components/page-layout";
+import SignInBar from "../../components/signin-bar";
 import UserCard from "../../components/user-card";
 import LocaleSelect from "../../containers/locale-select";
 import Navigation from "../../containers/navigation";
@@ -21,15 +22,18 @@ function User() {
     article: state.article.data,
   }));
 
+  console.log(select.userInfo, 'userInfo in user');
+
   const {t} = useTranslate();
 
   const callbacks = {
-    // 
-    
+    //Logout
+    deleteUserInfo: useCallback(() => store.actions.user.deleteUserInfo(), [store]),
   }
 
   return (
     <PageLayout>
+      <SignInBar t={t} userInfo={select.userInfo} deleteUserInfo={callbacks.deleteUserInfo}/>
       <Head title={select.article.title}>
         <LocaleSelect/>
       </Head>
