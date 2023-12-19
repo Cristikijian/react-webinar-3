@@ -9,7 +9,7 @@ function Categories(props) {
   };
 
   const createCategoryOption = (acc, category, level = 0) => {
-      acc.push(<option key={category._id} value={category._id}>{'-'.repeat(level)}{category.title}</option>);
+      acc.push(<option key={category._id} value={category._id}>{'- '.repeat(level)}{category.title}</option>);
       
       if (category.subCategories) {
         return category.subCategories.reduce((result, category) => createCategoryOption(result, category, level + 1), acc);

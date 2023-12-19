@@ -12,31 +12,32 @@ import useTranslate from "../../hooks/use-translate";
 
 function User() {
   const store = useStore();
+  const select = useSelector(state => ({
+    currentUser: state.auth.userInfo,
+    userInfo: state.user.userInfo,
+  }));
 
   useInit(() => {
-    store.actions.user.getUserInfo();
-  }, []);
-
-  const select = useSelector(state => ({
-    userInfo: state.user.userInfo,
-    article: state.article.data,
-  }));
+    if (select.currentUser) {
+      store.actions.user.getUserInfo(select.currentUser._id);
+    }
+  }, [select.currentUser]);
 
   const {t} = useTranslate();
 
   const callbacks = {
     //Logout
-    deleteUserInfo: useCallback(() => store.actions.user.deleteUserInfo(), [store]),
+    deleteUserInfo: useCallback(() => store.actions.auth.deleteUserInfo(), [store]),
   }
 
   return (
     <PageLayout>
-      <SignInBar t={t} userInfo={select.userInfo} deleteUserInfo={callbacks.deleteUserInfo}/>
-      <Head title={select.article.title}>
+      <SignInBar t={t} userInfo={select.currentUser} deleteUserInfo={callbacks.deleteUserInfo}/>
+      <Head title={t('title')}>
         <LocaleSelect/>
       </Head>
       <Navigation/>
-        <UserCard userInfo={select.userInfo} t={t}/>
+      {select.userInfo && <UserCard userInfo={select.userInfo} t={t}/>}
     </PageLayout>
   );
 }

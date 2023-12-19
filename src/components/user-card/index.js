@@ -9,15 +9,15 @@ function UserCard({userInfo, t}) {
    <div className={cn('title')}>{t('user.profile')}</div>
    {userInfo && 
    <><div className={cn('prop')}>
-     <div className={cn('label')}>{t('user.name')}</div>
+     <div className={cn('label')}>{t('user.name')}:</div>
      <div className={cn('value')}>{userInfo.profile.name}</div>
    </div>
    <div className={cn('prop')}>
-     <div className={cn('label')}>{t('user.phone')}</div>
+     <div className={cn('label')}>{t('user.phone')}:</div>
      <div className={cn('value')}>{userInfo.profile.phone}</div>
    </div>
    <div className={cn('prop')}>
-     <div className={cn('label')}>{t('user.email')}</div>
+     <div className={cn('label')}>{t('user.email')}:</div>
      <div className={cn('value')}>{userInfo.email}</div>
    </div></>}
  </div>

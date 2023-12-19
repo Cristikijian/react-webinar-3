@@ -1,6 +1,6 @@
 import { cn as bem } from '@bem-react/classname';
 import PropTypes from 'prop-types';
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './style.css';
 
@@ -12,8 +12,14 @@ function LoginForm({t, onLogin, isAutorize, error}) {
   const handleLogin = async (e) => {
     e.preventDefault();
     await onLogin(login, password);
-    navigate('/profile');
   }
+
+  useEffect(() => {
+    if (isAutorize) {
+      navigate('/profile');
+    }
+  }, [isAutorize]);
+
   return (
     <div className={cn()}>
       <h2 className={cn('title')}>{t('user.entering')}</h2>

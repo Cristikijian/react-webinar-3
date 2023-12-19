@@ -5,11 +5,13 @@ import './style.css';
 function SignInBar ({t, userInfo, deleteUserInfo}) {
   const navigate = useNavigate()
   const cn = bem('SignInBar');
-  const logout = () => {
-      deleteUserInfo();
-      localStorage.removeItem('token')
-      navigate('/login')
+  
+  const logout = async () => {
+      await deleteUserInfo();
+      localStorage.removeItem('token');
+      navigate('/login');
   }
+
   return (
       <div className={cn()}>
           {localStorage.getItem('token') ? <>

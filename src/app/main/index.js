@@ -19,7 +19,7 @@ function Main() {
   const store = useStore();
 
   const select = useSelector(state => ({
-    userInfo: state.user.userInfo,
+    userInfo: state.auth.userInfo,
   }));
 
   useInit(() => {
@@ -31,7 +31,7 @@ function Main() {
 
   const callbacks = {
     //Logout
-    deleteUserInfo: useCallback(() => store.actions.user.deleteUserInfo(), [store]),
+    deleteUserInfo: useCallback(() => store.actions.auth.deleteUserInfo(), [store]),
   }
 
   return (

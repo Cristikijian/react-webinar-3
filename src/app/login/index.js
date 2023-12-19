@@ -18,16 +18,16 @@ function Login() {
   const {t} = useTranslate();
 
   const select = useSelector(state => ({
-    userInfo: state.user.userInfo,
-    isAutorize: state.user.isAutorize,
-    error: state.user.error
+    userInfo: state.auth.authInfo,
+    isAutorize: state.auth.isAutorize,
+    error: state.auth.error
   }));
 
   const callbacks = {
     // Добавление в корзину
-    loginUser: useCallback((username, password) => store.actions.user.loginUser(username, password), [store]),
+    loginUser: useCallback((username, password) => store.actions.auth.loginUser(username, password), [store]),
     //Разлогин пользователя
-    deleteUserInfo: useCallback(() => store.actions.user.deleteUserInfo(), [store]),
+    deleteUserInfo: useCallback(() => store.actions.auth.deleteUserInfo(), [store]),
   }
 
   return (

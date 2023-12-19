@@ -26,7 +26,7 @@ function Article() {
   }, [params.id]);
 
   const select = useSelector(state => ({
-    userInfo: state.user.userInfo,
+    userInfo: state.auth.userInfo,
     article: state.article.data,
     waiting: state.article.waiting,
   }));
@@ -37,7 +37,7 @@ function Article() {
     // Добавление в корзину
     addToBasket: useCallback(_id => store.actions.basket.addToBasket(_id), [store]),
     //Разлогин пользователя
-    deleteUserInfo: useCallback(() => store.actions.user.deleteUserInfo(), [store]),
+    deleteUserInfo: useCallback(() => store.actions.auth.deleteUserInfo(), [store]),
   }
 
   return (
